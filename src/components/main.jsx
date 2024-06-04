@@ -1,8 +1,9 @@
 import React from 'react'
 import { useRef, useEffect } from 'react'   
-import videoBG from '../assets/Bg Video.mp4'
+import videoBG from '../assets/184808-874264370_small.mp4'
 import daLogo from "../assets/DA_Logo.png"
-import bpLogo from '../assets/Hi-Res-BAGONG-PILIPINAS-LOGO-1474x1536.png'
+import bpLogo from '../assets/Bagong Pilipinas Logo.png'
+import bdLogo from "../assets/ICT Month Alternate Logo May 8-09.png"
 
 const Main = () => {
   const videoRef = useRef(null);
@@ -34,6 +35,7 @@ const Main = () => {
         <div className='logos'>
           <img src={daLogo} alt="D.A Logo" className='logo' />
           <img src={bpLogo} alt="Bagong Pilipinas Logo" className='logo' />
+          <img src={bdLogo} alt="Bayang Digital" className='logo' />
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>
