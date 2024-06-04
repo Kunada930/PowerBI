@@ -39,10 +39,7 @@ const Main = () => {
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>
-        <button className="cta-button">Power BI</button>
-            {/* <div className="copyright">
-            <p>&copy; 2024 DA RFO 02. All rights reserved.</p>
-            </div> */}
+          <button className="cta-button">Power BI</button>
       </div>
     </div>
   );
