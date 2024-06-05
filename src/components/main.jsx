@@ -33,10 +33,10 @@ const Main = () => {
       <div className="overlay"></div>
       <video ref={videoRef} src={videoBG} autoPlay loop muted />
       <div className='content'>
-        <div className='logos'>
-          <img src={daLogo} alt="D.A Logo" className='logo' />
-          <img src={bpLogo} alt="Bagong Pilipinas Logo" className='logo' />
-          <img src={bdLogo} alt="Bayang Digital" className='logo' />
+        <div className='tataks'>
+          <img src={daLogo} alt="D.A Logo" className='tatak' />
+          <img src={bpLogo} alt="Bagong Pilipinas Logo" className='tatak' />
+          <img src={bdLogo} alt="Bayang Digital" className='tatak' />
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>

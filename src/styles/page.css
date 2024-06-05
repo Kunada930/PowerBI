@@ -1,16 +1,154 @@
-.card-container {
-    width: 300px;
-    overflow: hidden;
-    box-shadow: 0px 0px 15px -5px;
-    transition: 0.5s;
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-.card-container:hover{
-    transform: scale(1.1);
-    box-shadow: 0px 0px 15px 0px;
+/* Body styles */
+body {
+    background-color: #f5f5f5;
+    color: #111;
 }
 
-.image-container img{
-    overflow: hidden;
-    height: 200px;
+/* Logo styles */
+.logos {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+}
+
+.logo {
+    height: 100px;
+    margin-right: 10px;
+    animation: spin 2s linear infinite alternate;
+    transform-style: preserve-3d;
+}
+
+/* Links */
+.top-right-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .top-right-links a {
+    margin-left: 10px;
+    color: #333; /* Adjust color as needed */
+    text-decoration: none;
+  }
+
+/* Container styles */
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    padding: 0px 20px;
+}
+
+/* Section styles */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styles */
+.container-h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Card styles */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: 0 0 calc(33.33% - 20px);
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: .3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align button below other content */
+}
+
+.card:hover {
+    transform: rotateY(10deg); /* Rotate the card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+    border: none;
+    outline: none;
+    background-color: #1dad6a;
+    color: #fff;
+    border-radius: 10px;
+    max-width: 120px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+    background: #52d498;
+}
+
+/* Media queries */
+@media(max-width: 969px) {
+    .section {
+        padding: 20px 0px;
+    }
+
+    .container-h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        max-width: 0 0 calc(50% - 20px);
+    }
+}
+
+@media(max-width: 600px) {
+    .card {
+        flex: 0 0 100%;
+        max-width: 0 0 100;
+    }
 }
