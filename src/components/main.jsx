@@ -4,6 +4,7 @@ import videoBG from '../assets/184808-874264370_small.mp4'
 import daLogo from "../assets/DA_Logo.png"
 import bpLogo from '../assets/Bagong Pilipinas Logo.png'
 import bdLogo from "../assets/ICT Month Alternate Logo May 8-09.png"
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   const videoRef = useRef(null);
@@ -39,7 +40,9 @@ const Main = () => {
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>
-          <button className="cta-button">Power BI</button>
+        <Link to='PowerBi'>
+            <button className="cta-button">Power BI</button>
+        </Link>
       </div>
     </div>
   );
