@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
+import powerbi from "powerbi-client"
 import "../styles/page.css"
 import bagongPilipinasLogo from "../assets/Bagong Pilipinas Logo.png"
 import daLogo from "../assets/DA_Logo.png"
@@ -27,7 +28,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "https://app.powerbi.com/view?r=eyJrIjoiNmI1NDgyYzYtOTA0My00YjExLTg5ZGUtNTlhMmIyYWE3MDAzIiwidCI6IjY4OTgwNjFkLTFhNmItNGUzOS1hZGZjLWRjOGFmZTA3MjIwMSIsImMiOjEwfQ%3D%3D"
     },
     {
       title: 'ILD',
@@ -40,7 +42,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'RESEARCH',
@@ -53,7 +56,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'RAED',
@@ -66,7 +70,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'AMAD',
@@ -79,7 +84,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'HRMO',
@@ -92,7 +98,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'RAFIS',
@@ -106,7 +113,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'REGULATORY',
@@ -119,7 +127,8 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
+      },
+      powerBIUrl: "PowerBIReportHere"
     },
     {
       title: 'RCES',
@@ -133,10 +142,45 @@ function Page() {
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
-      }
-    },
+      },
+      powerBIUrl: "PowerBIReportHere"
+    }
+  ]);
 
-  ])
+  const [selectedReport, setSelectedReport] = useState(null);
+  const reportContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedReport && reportContainerRef.current) {
+      const embedConfiguration = {
+        type: 'report',
+        id: 'your-report-id', // Replace with your actual report ID
+        embedUrl: selectedReport,
+        accessToken: 'your-access-token', // Replace with your actual access token
+        settings: {
+          filterPaneEnabled: false,
+          navContentPaneEnabled: false
+        }
+      };
+
+      const powerbiService = new powerbi.Service(
+        powerbi.factories.hpmFactory,
+        powerbi.factories.wpmpFactory,
+        powerbi.factories.routerFactory
+      );
+
+      powerbiService.embed(reportContainerRef.current, embedConfiguration);
+    }
+  }, [selectedReport]);
+
+  const handleViewAnalytics = (url) => {
+    if (url) {
+      console.log("Selected Power BI URL: ", url);
+      setSelectedReport(url);
+    } else {
+      console.error("No Power BI URL provided for this card.");
+    }
+  };
 
   return (
     <div>
@@ -153,30 +197,35 @@ function Page() {
         <div className="container">
           <h2 className='container-h1'>Power BI Portal</h2>
           <div className="cards">
-          {
-            cards.map((card, i) => (
-              <div key={i} className="card">
-                <h3>{card.title}</h3>
-                <div className="lottie-container"> {/* Add a container div with a class */}
-                  {card.animationOptions && (
-                    <Lottie
-                      options={card.animationOptions}
-                      height={225}
-                      width={225}
-                      className="lottie" // Add the class name here
-                    />
+            {
+              cards.map((card, i) => (
+                <div key={i} className="card">
+                  <h3>{card.title}</h3>
+                  <div className="lottie-container">
+                    {card.animationOptions && (
+                      <Lottie
+                        options={card.animationOptions}
+                        height={225}
+                        width={225}
+                        className="lottie"
+                      />
+                    )}
+                  </div>
+                  <p>{card.text}</p>
+                  {card.powerBIUrl && (
+                    <div className="btn" onClick={() => handleViewAnalytics(card.powerBIUrl)}>View Analytics</div>
                   )}
                 </div>
-                <p>{card.text}</p>
-                <div className="btn">View Analytics</div>
-              </div>
-            ))
-          }
+              ))
+            }
           </div>
+          {selectedReport && (
+            <div className="report-container" ref={reportContainerRef} style={{ width: '100%', height: '600px' }}></div>
+          )}
         </div>
       </section>
     </div>
   )
 }
 
-export default Page
+export default Page;
