@@ -161,8 +161,8 @@ function Page() {
                   {card.animationOptions && (
                     <Lottie
                       options={card.animationOptions}
-                      height={250}
-                      width={250}
+                      height={225}
+                      width={225}
                       className="lottie" // Add the class name here
                     />
                   )}
