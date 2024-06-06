@@ -10,6 +10,10 @@ import ildAnimation from "../animations/ild.json"
 import research from "../animations/research.json"
 import raedAnimation from "../animations/raed.json"
 import amadAnimation from "../animations/amad.json"
+import hrAnimation from "../animations/hr.json"
+import rafisAnimation from "../animations/rafis.json"
+import regulatoryAnimation from "../animations/regulatory.json"
+import rcesAnimation from "../animations/rces.json"
 
 function Page() {
   const [cards] = useState([
@@ -84,12 +88,54 @@ function Page() {
       animationOptions: { 
         loop: true,
         autoplay: true,
-        animationData: pmedAnimation,
+        animationData: hrAnimation,
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice'
         }
       }
-    }
+    },
+    {
+      title: 'RAFIS',
+      text: `The Regional Agriculture and Fisheries Information Section (RAFIS) plays a crucial role in bridging the gap between 
+      the Department of Agriculture's initiatives and the stakeholders in the agriculture and fisheries sectors, 
+      ensuring that important information reaches the intended audiences effectively.`,
+      animationOptions: { 
+        loop: true,
+        autoplay: true,
+        animationData: rafisAnimation,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      }
+    },
+    {
+      title: 'REGULATORY',
+      text: `The Regulatory Division in the Department of Agriculture is tasked with overseeing and ensuring compliance with agricultural laws, regulations, and standards. 
+      This division plays a critical role in safeguarding the quality and safety of agricultural products and practices.`,
+      animationOptions: { 
+        loop: true,
+        autoplay: true,
+        animationData: regulatoryAnimation,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      }
+    },
+    {
+      title: 'RCES',
+      text: `These Research Centers and Experiment Stations (RCES) are integral to the continuous improvement 
+      and modernization of agriculture, ensuring that farmers have access to the latest scientific knowledge and technologies to 
+      enhance their productivity and sustainability.`,
+      animationOptions: { 
+        loop: true,
+        autoplay: true,
+        animationData: rcesAnimation,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      }
+    },
+
   ])
 
   return (
@@ -100,7 +146,7 @@ function Page() {
         <img src={ictMonthLogo} alt="Bayang Digital" className='logo' />
         <div className="top-right-links">
           <a href="/">Home</a>
-          <a href="#">About</a>
+          <a href="/">About</a>
         </div>
       </div>
       <section>
@@ -115,8 +161,8 @@ function Page() {
                   {card.animationOptions && (
                     <Lottie
                       options={card.animationOptions}
-                      height={200}
-                      width={200}
+                      height={250}
+                      width={250}
                       className="lottie" // Add the class name here
                     />
                   )}
