@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
-import powerbi from "powerbi-client"
+import  * as powerbi from "powerbi-client"
 import "../styles/page.css"
 import bagongPilipinasLogo from "../assets/Bagong Pilipinas Logo.png"
 import daLogo from "../assets/DA_Logo.png"
@@ -15,6 +15,98 @@ import hrAnimation from "../animations/hr.json"
 import rafisAnimation from "../animations/rafis.json"
 import regulatoryAnimation from "../animations/regulatory.json"
 import rcesAnimation from "../animations/rces.json"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components'
+import { faFacebook, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 969px) {
+    justify-content: space-around;
+  }
+`
+
+const CardWrapper = styled.div`
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+
+  @media (max-width: 969px) {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  @media (max-width: 600px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+`
+
+const Navbar = () => (
+  <nav className="navbar">
+    <div className="navbar-logos">
+      <img src={daLogo} alt="D.A Logo" className='logo' />
+      <img src={bagongPilipinasLogo} alt="Bagong Pilipinas Logo" className='logo' />
+      <img src={ictMonthLogo} alt="Bayang Digital" className='logo' />
+    </div>
+    <div className="navbar-title">
+      <h1>Power BI Portal</h1>
+    </div>
+    <div className="navbar-links">
+      <a href="/">
+        <FontAwesomeIcon icon={faHome} className="nav-icon" />
+        Home
+      </a>
+      <a href="/about">
+        <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
+        About
+      </a>
+    </div>
+  </nav>
+)
+
+const Footer = () => (
+  <footer className="footer">
+    <div className="footer-content">
+      <div className="footer-section">
+        <h4>About Us</h4>
+        <p>The Department of Agriculture Regional Field Office No. 02 is committed to empowering farmers and fishers through innovative agricultural practices and sustainable development.</p>
+      </div>
+      <div className="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div className="footer-section">
+        <h4>Contact Us</h4>
+        <p><FontAwesomeIcon icon={faPhone} /> (123) 456-7890</p>
+        <p><FontAwesomeIcon icon={faEnvelope} /> email@example.com</p>
+        <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Nursery Compound, San Gabriel, Tuguegarao City, Cagayan 3500</p>
+      </div>
+      <div className="footer-section">
+        <h4>Connect With Us</h4>
+        <div className="social-icons">
+          <a href="https://facebook.com" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
+          <a href="https://twitter.com" aria-label="Twitter"><FontAwesomeIcon icon={faXTwitter} /></a>
+          <a href="https://instagram.com" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
+        </div>
+      </div>
+    </div>
+    <div className="footer-bottom">
+      <p>&copy; 2024 Department of Agriculture Regional Field Office No. 02. All rights reserved.</p>
+    </div>
+  </footer>
+);
+
 
 function Page() {
   const [cards] = useState([
@@ -147,8 +239,8 @@ function Page() {
     }
   ]);
 
-  const [selectedReport, setSelectedReport] = useState(null);
-  const reportContainerRef = useRef(null);
+  const [selectedReport, setSelectedReport] = useState(null)
+  const reportContainerRef = useRef(null)
 
   useEffect(() => {
     if (selectedReport && reportContainerRef.current) {
@@ -161,53 +253,46 @@ function Page() {
           filterPaneEnabled: false,
           navContentPaneEnabled: false
         }
-      };
+      }
 
       const powerbiService = new powerbi.Service(
         powerbi.factories.hpmFactory,
         powerbi.factories.wpmpFactory,
         powerbi.factories.routerFactory
-      );
+      )
 
-      powerbiService.embed(reportContainerRef.current, embedConfiguration);
+      powerbiService.embed(reportContainerRef.current, embedConfiguration)
     }
-  }, [selectedReport]);
+  }, [selectedReport])
 
   const handleViewAnalytics = (url) => {
     if (url) {
-      console.log("Selected Power BI URL: ", url);
-      setSelectedReport(url);
+      console.log("Selected Power BI URL: ", url)
+      setSelectedReport(url)
     } else {
-      console.error("No Power BI URL provided for this card.");
+      console.error("No Power BI URL provided for this card.")
     }
-  };
+  }
+  
 
   return (
     <div>
-      <div className="page">
-        <img src={daLogo} alt="D.A Logo" className='logo' />
-        <img src={bagongPilipinasLogo} alt="Bagong Pilipinas Logo" className='logo' />
-        <img src={ictMonthLogo} alt="Bayang Digital" className='logo' />
-        <div className="top-right-links">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-        </div>
-      </div>
+      <Navbar />
+      <div className="content-wrapper">
       <section>
         <div className="container">
-          <h2 className='container-h1'>Power BI Portal</h2>
-          <div className="cards">
-            {
-              cards.map((card, i) => (
-                <div key={i} className="card">
+          <CardContainer>
+            {cards.map((card, i) => (
+              <CardWrapper key={i}>
+                <div className="card">
                   <h3>{card.title}</h3>
                   <div className="lottie-container">
                     {card.animationOptions && (
                       <Lottie
                         options={card.animationOptions}
-                        height={225}
-                        width={225}
-                        className="lottie"
+                        height="100%"
+                        width="100%"
+                        style={{ maxWidth: '225px', maxHeight: '225px', margin: '0 auto' }}
                       />
                     )}
                   </div>
@@ -216,16 +301,19 @@ function Page() {
                     <div className="btn" onClick={() => handleViewAnalytics(card.powerBIUrl)}>View Analytics</div>
                   )}
                 </div>
-              ))
-            }
-          </div>
+              </CardWrapper>
+            ))}
+          </CardContainer>
           {selectedReport && (
-            <div className="report-container" ref={reportContainerRef} style={{ width: '100%', height: '600px' }}></div>
+            <div className="report-container" ref={reportContainerRef}></div>
           )}
         </div>
       </section>
+      </div>
+      <Footer />
     </div>
   )
 }
+
 
 export default Page;
