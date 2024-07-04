@@ -61,7 +61,7 @@ const Navbar = () => (
         <FontAwesomeIcon icon={faHome} className="nav-icon" />
         Home
       </a>
-      <a href="/about">
+      <a href="https://www.google.com/error">
         <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
         About
       </a>
@@ -79,10 +79,9 @@ const Footer = () => (
       <div className="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://www.google.com/error">Privacy Policy</a></li>
+          <li><a href="https://www.google.com/error">Contact</a></li>
         </ul>
       </div>
       <div className="footer-section">
@@ -102,7 +101,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <p>&copy; 2024 Department of Agriculture Regional Field Office No. 02. All rights reserved.</p>
+      <p>&copy; 2024 Department of Agriculture Regional Field Office No. 02 All rights reserved.</p>
     </div>
   </footer>
 );

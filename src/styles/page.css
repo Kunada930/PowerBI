@@ -401,6 +401,9 @@
     color: #333;
     padding: 40px 20px 20px;
     font-family: Arial, sans-serif;
+    border-top: 2px solid #0072ff;
+    border-top: 2px solid transparent;
+border-image: linear-gradient(90deg, #0072ff, #00c6ff) 1;
   }
   
   .footer-content {
