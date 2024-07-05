@@ -3,9 +3,6 @@ import { useState, useRef, useEffect } from 'react'
 import Lottie from 'react-lottie'
 import  * as powerbi from "powerbi-client"
 import "../styles/page.css"
-// import bagongPilipinasLogo from "../assets/Bagong Pilipinas Logo.png"
-// import daLogo from "../assets/DA_Logo.png"
-// import ictMonthLogo from "../assets/ICT Month Alternate Logo May 8-09.png"
 import pmedAnimation from "../animations/Planning.json"
 import ildAnimation from "../animations/ild.json"
 import research from "../animations/research.json"
@@ -19,6 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faShieldAlt, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
 import { faFacebook, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const CardContainer = styled.div`
   display: flex;
@@ -62,22 +60,22 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <a href="/">
+        <Link to = "/">
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
-        </a>
-        <a href="https://www.google.com/error">
+        </Link>
+        <Link to="https://www.google.com/error">
           <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
           About
-        </a>
-        <a href="https://www.google.com/error">
+          </Link>
+        <Link to="https://www.google.com/error">
           <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           Contact Us
-        </a>
-        <a href="https://www.google.com/error">
+          </Link>
+        <Link to="https://www.google.com/error">
           <FontAwesomeIcon icon={faShieldAlt} className="nav-icon" />
           Privacy Policy
-        </a>
+          </Link>
       </div>
     </nav>
   );
