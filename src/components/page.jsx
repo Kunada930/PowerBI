@@ -60,7 +60,7 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <Link to = "/">
+        <Link to = "/PowerBI">
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
         </Link>
@@ -90,7 +90,7 @@ const Footer = () => (
       <div className="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/PowerBI">Home</a></li>
           <li><a href="https://www.google.com/error">Privacy Policy</a></li>
           <li><a href="https://www.google.com/error">Contact</a></li>
         </ul>

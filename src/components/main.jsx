@@ -40,7 +40,7 @@ const Main = () => {
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>
-        <Link to='/PowerBI'>
+        <Link to='/dadospowerbiportal'>
             <button className="cta-button">Power BI</button>
         </Link>
       </div>
