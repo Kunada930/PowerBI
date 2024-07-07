@@ -3,7 +3,6 @@ import { useRef, useEffect } from 'react'
 import videoBG from '../assets/184808-874264370_small.mp4'
 import daLogo from "../assets/DA_Logo.png"
 import bpLogo from '../assets/Bagong Pilipinas Logo.png'
-import bdLogo from "../assets/ICT Month Alternate Logo May 8-09.png"
 import { Link } from 'react-router-dom'
 
 const Main = () => {
@@ -36,7 +35,6 @@ const Main = () => {
         <div className='tataks'>
           <img src={daLogo} alt="D.A Logo" className='tatak' />
           <img src={bpLogo} alt="Bagong Pilipinas Logo" className='tatak' />
-          <img src={bdLogo} alt="Bayang Digital" className='tatak' />
         </div>
         <h1>Department of Agriculture</h1>
         <p>Regional Field Office 02</p>

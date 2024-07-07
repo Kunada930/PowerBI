@@ -1,10 +1,9 @@
 import React from 'react'
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import Lottie from 'react-lottie'
-import  * as powerbi from "powerbi-client"
 import "../styles/page.css"
-import pmedAnimation from "../animations/Planning.json"
-import ildAnimation from "../animations/ild.json"
+import pmedAnimation from "../animations/pmed2.json"
+import ildAnimation from "../animations/ild2.json"
 import research from "../animations/research.json"
 import raedAnimation from "../animations/raed.json"
 import amadAnimation from "../animations/amad.json"
@@ -54,13 +53,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <h1>Power BI Portal</h1>
+        <h1>DARFO2 PowerBI Portal</h1>
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <Link to = "/PowerBI">
+        <Link to = "/">
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
         </Link>
@@ -80,6 +79,7 @@ const Navbar = () => {
     </nav>
   );
 };
+
 const Footer = () => (
   <footer className="footer">
     <div className="footer-content">
@@ -98,7 +98,7 @@ const Footer = () => (
       <div className="footer-section">
         <h4>Contact Us</h4>
         <p><FontAwesomeIcon icon={faPhone} /> (123) 456-7890</p>
-        <p><FontAwesomeIcon icon={faEnvelope} /> email@example.com</p>
+        <p><FontAwesomeIcon icon={faEnvelope} /> darafis02@gmail.com</p>
         <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Nursery Compound, San Gabriel, Tuguegarao City, Cagayan 3500</p>
       </div>
       <div className="footer-section">
@@ -190,9 +190,10 @@ function Page() {
       powerBIUrl: "PowerBIReportHere"
     },
     {
-      title: 'HRMO',
-      text: `The Human Resource Management Office (HRMO) is a vital division 
-      within an organization responsible for managing all aspects of employee relations and human resources functions.`,
+      title: 'FAD',
+      text: `FAD provides centralized administrative support through procurement, maintenance allocation 
+      & development of FDC’s manpower and physical resources. It takes charge of the receipt, custody, allocation, 
+      utilization of financial resources, and maintenance of accurate financial records.`,
       animationOptions: { 
         loop: true,
         autoplay: true,
@@ -249,41 +250,11 @@ function Page() {
     }
   ]);
 
-  const [selectedReport, setSelectedReport] = useState(null)
-  const reportContainerRef = useRef(null)
-
-  useEffect(() => {
-    if (selectedReport && reportContainerRef.current) {
-      const embedConfiguration = {
-        type: 'report',
-        id: 'your-report-id', // Replace with your actual report ID
-        embedUrl: selectedReport,
-        accessToken: 'your-access-token', // Replace with your actual access token
-        settings: {
-          filterPaneEnabled: false,
-          navContentPaneEnabled: false
-        }
-      }
-
-      const powerbiService = new powerbi.Service(
-        powerbi.factories.hpmFactory,
-        powerbi.factories.wpmpFactory,
-        powerbi.factories.routerFactory
-      )
-
-      powerbiService.embed(reportContainerRef.current, embedConfiguration)
-    }
-  }, [selectedReport])
-
   const handleViewAnalytics = (url) => {
     if (url) {
-      console.log("Selected Power BI URL: ", url)
-      setSelectedReport(url)
-    } else {
-      console.error("No Power BI URL provided for this card.")
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
-  }
-  
+  };
 
   return (
     <div>
@@ -308,15 +279,17 @@ function Page() {
                   </div>
                   <p>{card.text}</p>
                   {card.powerBIUrl && (
-                    <div className="btn" onClick={() => handleViewAnalytics(card.powerBIUrl)}>View Analytics</div>
+                     <button 
+                     onClick={() => handleViewAnalytics(card.powerBIUrl)}
+                     className="btn"
+                      >
+                      View Analytics
+                      </button>
                   )}
                 </div>
               </CardWrapper>
             ))}
           </CardContainer>
-          {selectedReport && (
-            <div className="report-container" ref={reportContainerRef}></div>
-          )}
         </div>
       </section>
       </div>
