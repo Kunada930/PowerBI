@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/PowerBI/static/css/main.0053346c.css",
-    "main.js": "/PowerBI/static/js/main.987760c9.js",
+    "main.css": "/PowerBI/static/css/main.9175bc6b.css",
+    "main.js": "/PowerBI/static/js/main.c1b9d9a6.js",
     "static/media/184808-874264370_small.mp4": "/PowerBI/static/media/184808-874264370_small.af2a7f07d655890593dc.mp4",
     "static/media/Bagong Pilipinas Logo.png": "/PowerBI/static/media/Bagong Pilipinas Logo.e9f7bf23dfc09b193ffc.png",
     "static/media/DA_Logo.png": "/PowerBI/static/media/DA_Logo.75ed1bba5192b1df370d.png",
-    "static/media/ICT Month Alternate Logo May 8-09.png": "/PowerBI/static/media/ICT Month Alternate Logo May 8-09.faa440ad609c00ca81e6.png",
     "index.html": "/PowerBI/index.html",
-    "main.0053346c.css.map": "/PowerBI/static/css/main.0053346c.css.map",
-    "main.987760c9.js.map": "/PowerBI/static/js/main.987760c9.js.map"
+    "main.9175bc6b.css.map": "/PowerBI/static/css/main.9175bc6b.css.map",
+    "main.c1b9d9a6.js.map": "/PowerBI/static/js/main.c1b9d9a6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0053346c.css",
-    "static/js/main.987760c9.js"
+    "static/css/main.9175bc6b.css",
+    "static/js/main.c1b9d9a6.js"
   ]
 }
