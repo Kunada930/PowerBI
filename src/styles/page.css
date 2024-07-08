@@ -19,6 +19,88 @@
       color: #111;
   }
 
+  /* Hero design */
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+.hero-section {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  color: #0072ff;
+  text-transform: none;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-typed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.hero-typed-prefix {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-right: 0.5rem;
+}
+
+.hero-typed {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0072ce;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-typed-prefix,
+  .hero-typed {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+}
+
+
     /* Navbar styles */
     .navbar {
         display: flex;

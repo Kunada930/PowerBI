@@ -16,6 +16,7 @@ import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faShieldAlt,
 import styled from 'styled-components'
 import { faFacebook, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { ReactTyped } from 'react-typed'
 
 const CardContainer = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <h1>DARFO2 PowerBI Portal</h1>
+        {/* <h1>DARFO2 PowerBI Portal</h1> */}
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
@@ -116,6 +117,29 @@ const Footer = () => (
     </div>
   </footer>
 );
+
+const Hero = () => {
+  return (
+    <div className="hero-section">
+      <div className="hero-content">
+        <h1 className="hero-title">DARFO2 PowerBI Portal</h1>
+        <div className="hero-typed-container">
+          <p className="hero-typed-prefix">Empowering</p>
+          <ReactTyped
+            className="hero-typed"
+            strings={["Agriculture", "Decision-Making", "Efficiency"]}
+            typeSpeed={80}
+            backSpeed={50}
+            loop
+          />
+        </div>
+        <p className="hero-description">
+          Transform agricultural data into actionable insights with interactive visualizations.
+        </p>
+      </div>
+    </div>
+  );
+};
 
 
 function Page() {
@@ -259,6 +283,7 @@ function Page() {
   return (
     <div>
       <Navbar />
+      <Hero />
       <div className="content-wrapper">
       <section>
         <div className="container">
