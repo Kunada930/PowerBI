@@ -3,6 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faSeedling, faTractor, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
+const gradientText = `
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
+const gradientLine = `
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  height: 2px;
+`;
+
 const AboutContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -16,19 +27,26 @@ const AboutContainer = styled.div`
 
 const Header = styled.h1`
   font-size: 2.5rem;
-  color: #2c5e1a;
   text-align: center;
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  ${gradientText}
 `;
 
 const SubHeader = styled.h2`
   font-size: 1.8rem;
-  color: #4a8c34;
   margin-top: 40px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #4a8c34;
+  ${gradientText}
+  position: relative;
   padding-bottom: 10px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    ${gradientLine}
+  }
 `;
 
 const Paragraph = styled.p`
@@ -72,7 +90,7 @@ const FeatureItem = styled.div`
 const FeatureIcon = styled(FontAwesomeIcon)`
   font-size: 2.5rem;
   color: #ffffff;
-  background-color: #4a8c34;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
   padding: 20px;
   border-radius: 50%;
   margin-bottom: 20px;
@@ -87,6 +105,7 @@ const FeatureTitle = styled.h3`
   font-size: 1.2rem;
   color: #2c5e1a;
   margin-bottom: 10px;
+  ${gradientText}
 `;
 
 const FeatureDescription = styled.p`

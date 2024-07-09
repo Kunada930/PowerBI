@@ -96,8 +96,9 @@ const Footer = () => (
         <h4>Quick Links</h4>
         <ul>
           <li><a href="/PowerBI">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="https://www.google.com/error">Contact Us</a></li>
           <li><a href="https://www.google.com/error">Privacy Policy</a></li>
-          <li><a href="https://www.google.com/error">Contact</a></li>
         </ul>
       </div>
       <div className="footer-section">
@@ -110,9 +111,6 @@ const Footer = () => (
         <h4>Connect With Us</h4>
         <div className="social-icons">
           <a href="https://www.facebook.com/daregion2official" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
-          {/* <a href="https://twitter.com" aria-label="Twitter"><FontAwesomeIcon icon={faXTwitter} /></a>
-          <a href="https://instagram.com" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
-          <a href="https://linkedin.com" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a> */}
         </div>
       </div>
     </div>
