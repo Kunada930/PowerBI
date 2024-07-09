@@ -5,6 +5,7 @@ import './index.css';
 import './styles/page.css'
 import App from './App';
 import Page from './components/page';
+import About from './components/about'
 
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/dadospowerbiportal",
     element: <Page/>
+  },
+  {
+    path: "/about",
+    element: <About/>
   },
 ], {
   basename: "/PowerBI"  // This should match your repository name

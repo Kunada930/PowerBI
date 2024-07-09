@@ -14,10 +14,12 @@ import rcesAnimation from "../animations/rces.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faShieldAlt, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
-import { faFacebook, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { ReactTyped } from 'react-typed'
 
+
+//For responsive webpage
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -44,6 +46,7 @@ const CardWrapper = styled.div`
   }
 `
 
+//Navbar code
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -54,7 +57,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        {/* <h1>DARFO2 PowerBI Portal</h1> */}
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
@@ -64,7 +66,7 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
         </Link>
-        <Link to="https://www.google.com/error">
+        <Link to="/about">
           <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
           About
           </Link>
@@ -81,6 +83,8 @@ const Navbar = () => {
   );
 };
 
+
+//Footer code
 const Footer = () => (
   <footer className="footer">
     <div className="footer-content">
@@ -98,17 +102,17 @@ const Footer = () => (
       </div>
       <div className="footer-section">
         <h4>Contact Us</h4>
-        <p><FontAwesomeIcon icon={faPhone} /> (123) 456-7890</p>
-        <p><FontAwesomeIcon icon={faEnvelope} /> darafis02@gmail.com</p>
+        <p><FontAwesomeIcon icon={faPhone} /> (078) 396-1328 / (078) 844-1031</p>
+        <p><FontAwesomeIcon icon={faEnvelope} /> ored.rfo2@da.gov.ph</p>
         <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Nursery Compound, San Gabriel, Tuguegarao City, Cagayan 3500</p>
       </div>
       <div className="footer-section">
         <h4>Connect With Us</h4>
         <div className="social-icons">
-          <a href="https://facebook.com" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
-          <a href="https://twitter.com" aria-label="Twitter"><FontAwesomeIcon icon={faXTwitter} /></a>
+          <a href="https://www.facebook.com/daregion2official" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
+          {/* <a href="https://twitter.com" aria-label="Twitter"><FontAwesomeIcon icon={faXTwitter} /></a>
           <a href="https://instagram.com" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
-          <a href="https://linkedin.com" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a> */}
         </div>
       </div>
     </div>
@@ -118,6 +122,7 @@ const Footer = () => (
   </footer>
 );
 
+// Hero effect
 const Hero = () => {
   return (
     <div className="hero-section">
@@ -141,7 +146,7 @@ const Hero = () => {
   );
 };
 
-
+//function per card
 function Page() {
   const [cards] = useState([
     {
@@ -274,12 +279,15 @@ function Page() {
     }
   ]);
 
+  //When "View Analytics" is clicked, it will open another link for the power bi page
   const handleViewAnalytics = (url) => {
     if (url) {
       window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
 
+
+  //render part
   return (
     <div>
       <Navbar />
