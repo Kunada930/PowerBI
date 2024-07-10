@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faShieldAlt, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ReactTyped } from 'react-typed'
 
 
@@ -46,12 +46,17 @@ const CardWrapper = styled.div`
   }
 `
 
-//Navbar code
+//Navbar component
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : '';
   };
 
   return (
@@ -62,29 +67,29 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faBars} />
       </div>
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <Link to = "/">
+        <Link to="/" className={`nav-link ${isActive('/')}`}>
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
         </Link>
-        <Link to="/about">
+        <Link to="/about" className={`nav-link ${isActive('/about')}`}>
           <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
           About
-          </Link>
-        <Link to="https://www.google.com/error">
+        </Link>
+        <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
           <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           Contact Us
-          </Link>
-        <Link to="https://www.google.com/error">
+        </Link>
+        <Link to="/privacy" className={`nav-link ${isActive('/privacy')}`}>
           <FontAwesomeIcon icon={faShieldAlt} className="nav-icon" />
           Privacy Policy
-          </Link>
+        </Link>
       </div>
     </nav>
   );
 };
 
 
-//Footer code
+//Footer component
 const Footer = () => (
   <footer className="footer">
     <div className="footer-content">
@@ -120,7 +125,7 @@ const Footer = () => (
   </footer>
 );
 
-// Hero effect
+// Hero component
 const Hero = () => {
   return (
     <div className="hero-section">
