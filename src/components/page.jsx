@@ -182,9 +182,9 @@ const Footer = () => (
 // Hero component
 const Hero = () => {
   return (
-    <div className="hero-section">
-      <div className="hero-content">
-        <h1 className="hero-title">DARFO2 PowerBI Portal</h1>
+    <HeroSection>
+      <HeroContent>
+        <HeroTitle>DARFO2 PowerBI Portal</HeroTitle>
         <div className="hero-typed-container">
           <p className="hero-typed-prefix">Empowering</p>
           <ReactTyped
@@ -198,8 +198,8 @@ const Hero = () => {
         <p className="hero-description">
           Transform agricultural data into actionable insights with interactive visualizations.
         </p>
-      </div>
-    </div>
+      </HeroContent>
+    </HeroSection>
   );
 };
 
