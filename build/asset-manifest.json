@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/PowerBI/static/css/main.8fd20cee.css",
+    "main.js": "/PowerBI/static/js/main.5e18432b.js",
+    "static/media/184808-874264370_small.mp4": "/PowerBI/static/media/184808-874264370_small.af2a7f07d655890593dc.mp4",
+    "static/media/Bagong Pilipinas Logo.png": "/PowerBI/static/media/Bagong Pilipinas Logo.e9f7bf23dfc09b193ffc.png",
+    "static/media/DA_Logo.png": "/PowerBI/static/media/DA_Logo.75ed1bba5192b1df370d.png",
+    "index.html": "/PowerBI/index.html",
+    "main.8fd20cee.css.map": "/PowerBI/static/css/main.8fd20cee.css.map",
+    "main.5e18432b.js.map": "/PowerBI/static/js/main.5e18432b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fd20cee.css",
+    "static/js/main.5e18432b.js"
+  ]
+}
