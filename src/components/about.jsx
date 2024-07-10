@@ -7,33 +7,33 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-const gradientText = `
-  background: linear-gradient(90deg, #0072ff, #00c6ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
-const gradientLine = `
-  background: linear-gradient(90deg, #0072ff, #00c6ff);
-  height: 3px;
+const MainContent = styled.main`
+  flex: 1;
+  background-color: #f8f9fa;
 `;
 
 const AboutContainer = styled.div`
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 30px;
   font-family: 'Poppins', sans-serif;
   color: #333;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 `;
 
 const Header = styled.h1`
   font-size: 3rem;
   text-align: center;
   margin-bottom: 40px;
-  ${gradientText}
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -41,7 +41,9 @@ const SubHeader = styled.h2`
   font-size: 2.2rem;
   margin-top: 60px;
   margin-bottom: 30px;
-  ${gradientText}
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
   padding-bottom: 15px;
 
@@ -49,7 +51,8 @@ const SubHeader = styled.h2`
     content: '';
     display: block;
     width: 100%;
-    ${gradientLine}
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    height: 3px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -114,12 +117,32 @@ const FeatureTitle = styled.h3`
   font-size: 1.4rem;
   color: #2c5e1a;
   margin-bottom: 15px;
-  ${gradientText}
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const FeatureDescription = styled.p`
   font-size: 1rem;
   color: #555;
+`;
+
+const CTAButton = styled(Link)`
+  display: inline-block;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+  }
 `;
 
 
@@ -201,70 +224,74 @@ const Navbar = () => {
     </footer>
   );
 
-const AboutPage = () => {
-  return (
-    <div>
-        <Navbar/>
-    <AboutContainer>
-      <Header>About DARFO2 PowerBI Portal</Header>
-      
-      <Paragraph>
-        Welcome to the Department of Agriculture Regional Field Office No. 02 (DARFO2) PowerBI Portal. 
-        Our platform is dedicated to transforming agricultural data into actionable insights through 
-        interactive visualizations and comprehensive analytics.
-      </Paragraph>
-
-      <MissionStatement>
-        "Empowering agricultural decision-making through data-driven insights and cutting-edge visualization technology."
-      </MissionStatement>
-
-      <SubHeader>Our Purpose</SubHeader>
-      <Paragraph>
-        The DARFO2 PowerBI Portal serves as a central hub for agricultural data analysis in Region 02. 
-        We aim to support farmers, policymakers, and agricultural stakeholders by providing easy access 
-        to crucial information, trends, and forecasts that drive informed decision-making in the agricultural sector.
-      </Paragraph>
-
-      <SubHeader>Key Features</SubHeader>
-      <FeatureGrid>
-        <FeatureItem>
-          <FeatureIcon icon={faLeaf} />
-          <FeatureTitle>Crop Analytics</FeatureTitle>
-          <FeatureDescription>Detailed insights into crop production, yield, and market trends.</FeatureDescription>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureIcon icon={faSeedling} />
-          <FeatureTitle>Resource Management</FeatureTitle>
-          <FeatureDescription>Tools for optimizing agricultural resources and inputs.</FeatureDescription>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureIcon icon={faTractor} />
-          <FeatureTitle>Farm Productivity</FeatureTitle>
-          <FeatureDescription>Metrics and benchmarks for improving farm efficiency.</FeatureDescription>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureIcon icon={faChartLine} />
-          <FeatureTitle>Market Intelligence</FeatureTitle>
-          <FeatureDescription>Up-to-date market data and price forecasts for informed selling decisions.</FeatureDescription>
-        </FeatureItem>
-      </FeatureGrid>
-
-      <SubHeader>Our Commitment</SubHeader>
-      <Paragraph>
-        At DARFO2, we are committed to fostering sustainable agricultural practices, enhancing food security, 
-        and improving the livelihoods of farmers in our region. Through this PowerBI Portal, we strive to 
-        bridge the gap between data and action, enabling a more resilient and prosperous agricultural sector.
-      </Paragraph>
-
-      <Paragraph>
-        Whether you're a farmer looking to optimize your crop production, a researcher analyzing agricultural trends, 
-        or a policymaker shaping agricultural policies, our portal provides the insights you need to make 
-        data-driven decisions that positively impact agriculture in Region 02 and beyond.
-      </Paragraph>
-    </AboutContainer>
-    <Footer/>
-    </div>
-  );
-};
-
-export default AboutPage;
+  const AboutPage = () => {
+    return (
+      <PageWrapper>
+        <Navbar />
+        <MainContent>
+          <AboutContainer>
+            <Header>About DARFO2 PowerBI Portal</Header>
+            
+            <Paragraph>
+              Welcome to the Department of Agriculture Regional Field Office No. 02 (DARFO2) PowerBI Portal. 
+              Our platform is dedicated to transforming agricultural data into actionable insights through 
+              interactive visualizations and comprehensive analytics.
+            </Paragraph>
+  
+            <MissionStatement>
+              "Empowering agricultural decision-making through data-driven insights and cutting-edge visualization technology."
+            </MissionStatement>
+  
+            <SubHeader>Our Purpose</SubHeader>
+            <Paragraph>
+              The DARFO2 PowerBI Portal serves as a central hub for agricultural data analysis in Region 02. 
+              We aim to support farmers, policymakers, and agricultural stakeholders by providing easy access 
+              to crucial information, trends, and forecasts that drive informed decision-making in the agricultural sector.
+            </Paragraph>
+  
+            <SubHeader>Key Features</SubHeader>
+            <FeatureGrid>
+              <FeatureItem>
+                <FeatureIcon icon={faLeaf} />
+                <FeatureTitle>Crop Analytics</FeatureTitle>
+                <FeatureDescription>Detailed insights into crop production, yield, and market trends.</FeatureDescription>
+              </FeatureItem>
+              <FeatureItem>
+                <FeatureIcon icon={faSeedling} />
+                <FeatureTitle>Resource Management</FeatureTitle>
+                <FeatureDescription>Tools for optimizing agricultural resources and inputs.</FeatureDescription>
+              </FeatureItem>
+              <FeatureItem>
+                <FeatureIcon icon={faTractor} />
+                <FeatureTitle>Farm Productivity</FeatureTitle>
+                <FeatureDescription>Metrics and benchmarks for improving farm efficiency.</FeatureDescription>
+              </FeatureItem>
+              <FeatureItem>
+                <FeatureIcon icon={faChartLine} />
+                <FeatureTitle>Market Intelligence</FeatureTitle>
+                <FeatureDescription>Up-to-date market data and price forecasts for informed selling decisions.</FeatureDescription>
+              </FeatureItem>
+            </FeatureGrid>
+  
+            <SubHeader>Our Commitment</SubHeader>
+            <Paragraph>
+              At DARFO2, we are committed to fostering sustainable agricultural practices, enhancing food security, 
+              and improving the livelihoods of farmers in our region. Through this PowerBI Portal, we strive to 
+              bridge the gap between data and action, enabling a more resilient and prosperous agricultural sector.
+            </Paragraph>
+  
+            <Paragraph>
+              Whether you're a farmer looking to optimize your crop production, a researcher analyzing agricultural trends, 
+              or a policymaker shaping agricultural policies, our portal provides the insights you need to make 
+              data-driven decisions that positively impact agriculture in Region 02 and beyond.
+            </Paragraph>
+  
+            <CTAButton to="/dadospowerbiportal">Explore Our Analytics</CTAButton>
+          </AboutContainer>
+        </MainContent>
+        <Footer />
+      </PageWrapper>
+    );
+  };
+  
+  export default AboutPage;
