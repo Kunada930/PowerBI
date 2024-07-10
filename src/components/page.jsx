@@ -13,27 +13,49 @@ import regulatoryAnimation from "../animations/regulatory.json"
 import rcesAnimation from "../animations/rces.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faPieChart, faBars } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { ReactTyped } from 'react-typed'
 
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
-//For responsive webpage
+const slideUp = keyframes`
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+`;
+
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  animation: ${fadeIn} 0.5s ease-out;
+`;
+
+const MainContent = styled.main`
+  flex: 1;
+  background-color: #f8f9fa;
+`;
+
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  animation: ${fadeIn} 0.5s ease-out;
 
   @media (max-width: 969px) {
     justify-content: space-around;
   }
-`
+`;
 
 const CardWrapper = styled.div`
   flex: 0 0 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
   margin-bottom: 20px;
+  animation: ${slideUp} 0.5s ease-out;
 
   @media (max-width: 969px) {
     flex: 0 0 calc(50% - 20px);
@@ -44,8 +66,40 @@ const CardWrapper = styled.div`
     flex: 0 0 100%;
     max-width: 100%;
   }
-`
+`;
 
+const HeroSection = styled.div`
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  animation: ${fadeIn} 0.5s ease-out;
+`;
+
+const HeroContent = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  animation: ${slideUp} 0.5s ease-out;
+`;
+
+const HeroTitle = styled.h1`
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  color: #0072ff;
+  text-transform: none;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: ${slideUp} 0.5s ease-out;
+`;
 //Navbar component
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,7 +133,7 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
           About
         </Link>
-        <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
+        <Link to="/contact" className={`nav-link ${isActive('/contactus')}`}>
           <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           Contact Us
         </Link>
@@ -292,46 +346,44 @@ function Page() {
 
   //render part
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <div className="content-wrapper">
-      <section>
-        <div className="container">
-          <CardContainer>
-            {cards.map((card, i) => (
-              <CardWrapper key={i}>
-                <div className="card">
-                  <h3>{card.title}</h3>
-                  <div className="lottie-container">
-                    {card.animationOptions && (
-                      <Lottie
-                        options={card.animationOptions}
-                        height="100%"
-                        width="100%"
-                        style={{ maxWidth: '225px', maxHeight: '225px', margin: '0 auto' }}
-                      />
-                    )}
-                  </div>
-                  <p>{card.text}</p>
-                  {card.powerBIUrl && (
-                     <button 
-                     onClick={() => handleViewAnalytics(card.powerBIUrl)}
-                     className="btn"
-                      >
-                      View Analytics
-                      </button>
+    <PageWrapper>
+    <Navbar />
+    <Hero />
+    <MainContent>
+      <div className="container">
+        <CardContainer>
+          {cards.map((card, i) => (
+            <CardWrapper key={i}>
+              <div className="card">
+                <h3>{card.title}</h3>
+                <div className="lottie-container">
+                  {card.animationOptions && (
+                    <Lottie
+                      options={card.animationOptions}
+                      height="100%"
+                      width="100%"
+                      style={{ maxWidth: '225px', maxHeight: '225px', margin: '0 auto' }}
+                    />
                   )}
                 </div>
-              </CardWrapper>
-            ))}
-          </CardContainer>
-        </div>
-      </section>
+                <p>{card.text}</p>
+                {card.powerBIUrl && (
+                  <button 
+                    onClick={() => handleViewAnalytics(card.powerBIUrl)}
+                    className="btn"
+                  >
+                    View Analytics
+                  </button>
+                )}
+              </div>
+            </CardWrapper>
+          ))}
+        </CardContainer>
       </div>
-      <Footer />
-    </div>
-  )
+    </MainContent>
+    <Footer />
+  </PageWrapper>
+);
 }
 
 

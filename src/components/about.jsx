@@ -1,16 +1,28 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faSeedling, faTractor, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { faPhone, faEnvelope, faMapMarkerAlt, faHome, faInfoCircle, faPieChart, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const slideUp = keyframes`
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+`;
+
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  animation: ${fadeIn} 0.5s ease-out;
 `;
 
 const MainContent = styled.main`
@@ -25,6 +37,7 @@ const AboutContainer = styled.div`
   padding: 60px 30px;
   font-family: 'Poppins', sans-serif;
   color: #333;
+  animation: ${slideUp} 0.5s ease-out;
 `;
 
 const Header = styled.h1`
@@ -35,6 +48,7 @@ const Header = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: ${slideUp} 0.5s ease-out;
 `;
 
 const SubHeader = styled.h2`
@@ -83,6 +97,7 @@ const FeatureGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   margin-top: 50px;
+  animation: ${fadeIn} 0.5s ease-out;
 `;
 
 const FeatureItem = styled.div`
@@ -179,7 +194,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
               About
             </Link>
-            <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
+            <Link to="/contact" className={`nav-link ${isActive('/contactus')}`}>
               <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
               Contact Us
             </Link>
