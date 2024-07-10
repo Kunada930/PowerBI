@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import Lottie from 'react-lottie'
 import "../styles/page.css"
+import da_logo from '../assets/DA_Logo.png'
+import bp_logo from '../assets/Bagong Pilipinas Logo.png'
 import pmedAnimation from "../animations/pmed2.json"
 import ildAnimation from "../animations/ild2.json"
 import research from "../animations/research.json"
@@ -115,6 +117,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      <div className="navbar-logos">
+        <img src={da_logo} alt="D.A. Logo" className="navbar-logo da-logo" />
+        <img src={bp_logo} alt="Bagong Pilipinas Logo" className="navbar-logo bp-logo" />
+      </div>
       <div className="navbar-title">
       </div>
       <div className="hamburger" onClick={toggleMenu}>

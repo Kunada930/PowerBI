@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt, faHome, faInfoCircle, faPieChart, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
+import da_logo from '../assets/DA_Logo.png'
+import bp_logo from '../assets/Bagong Pilipinas Logo.png'
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -190,6 +192,10 @@ const Navbar = () => {
   
     return (
         <nav className="navbar">
+          <div className="navbar-logos">
+            <img src={da_logo} alt="D.A. Logo" className="navbar-logo da-logo" />
+            <img src={bp_logo} alt="Bagong Pilipinas Logo" className="navbar-logo bp-logo" />
+          </div>
           <div className="navbar-title">
           </div>
           <div className="hamburger" onClick={toggleMenu}>

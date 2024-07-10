@@ -6,6 +6,8 @@ import { faPhone, faEnvelope, faMapMarkerAlt, faHome, faInfoCircle, faPieChart, 
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import da_logo from '../assets/DA_Logo.png'
+import bp_logo from '../assets/Bagong Pilipinas Logo.png'
 
 
 const fadeIn = keyframes`
@@ -176,6 +178,10 @@ const Navbar = () => {
   
     return (
         <nav className="navbar">
+          <div className="navbar-logos">
+            <img src={da_logo} alt="D.A. Logo" className="navbar-logo da-logo" />
+            <img src={bp_logo} alt="Bagong Pilipinas Logo" className="navbar-logo bp-logo" />
+          </div>
           <div className="navbar-title">
           </div>
           <div className="hamburger" onClick={toggleMenu}>
@@ -246,7 +252,6 @@ const Navbar = () => {
         <MainContent>
           <AboutContainer>
             <Header>About DARFO2 PowerBI Portal</Header>
-            
             <Paragraph>
               Welcome to the Department of Agriculture Regional Field Office No. 02 (DARFO2) PowerBI Portal. 
               Our platform is dedicated to transforming agricultural data into actionable insights through 
