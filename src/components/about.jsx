@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faSeedling, faTractor, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
-import { faPhone, faEnvelope, faMapMarkerAlt, faHome, faInfoCircle, faShieldAlt, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faMapMarkerAlt, faHome, faInfoCircle, faPieChart, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
@@ -137,33 +137,33 @@ const Navbar = () => {
     };
   
     return (
-      <nav className="navbar">
-        <div className="navbar-title">
-        </div>
-        <div className="hamburger" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} />
-        </div>
-        <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" className={`nav-link ${isActive('/')}`}>
-            <FontAwesomeIcon icon={faHome} className="nav-icon" />
-            Home
-          </Link>
-          <Link to="/about" className={`nav-link ${isActive('/about')}`}>
-            <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
-            About
-          </Link>
-          <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
-            <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
-            Contact Us
-          </Link>
-          <Link to="/privacy" className={`nav-link ${isActive('/privacy')}`}>
-            <FontAwesomeIcon icon={faShieldAlt} className="nav-icon" />
-            Privacy Policy
-          </Link>
-        </div>
-      </nav>
-    );
-  };
+        <nav className="navbar">
+          <div className="navbar-title">
+          </div>
+          <div className="hamburger" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} />
+          </div>
+          <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+            <Link to="/" className={`nav-link ${isActive('/')}`}>
+              <FontAwesomeIcon icon={faHome} className="nav-icon" />
+              Home
+            </Link>
+            <Link to="/dadospowerbiportal" className={`nav-link ${isActive('/dadospowerbiportal')}`}>
+                <FontAwesomeIcon icon={faPieChart} className="nav-icon" />
+                Analytics
+              </Link>
+            <Link to="/about" className={`nav-link ${isActive('/about')}`}>
+              <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
+              About
+            </Link>
+            <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
+              <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
+              Contact Us
+            </Link>
+          </div>
+        </nav>
+      );
+    };
   
   // Footer component
   const Footer = () => (

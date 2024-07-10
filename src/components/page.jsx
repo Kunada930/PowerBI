@@ -12,7 +12,7 @@ import rafisAnimation from "../animations/rafis.json"
 import regulatoryAnimation from "../animations/regulatory.json"
 import rcesAnimation from "../animations/rces.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faShieldAlt, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faPhone, faEnvelope, faMapMarkerAlt, faPieChart, faBars } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
@@ -71,6 +71,10 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faHome} className="nav-icon" />
           Home
         </Link>
+        <Link to="/dadospowerbiportal" className={`nav-link ${isActive('/dadospowerbiportal')}`}>
+            <FontAwesomeIcon icon={faPieChart} className="nav-icon" />
+            Analytics
+          </Link>
         <Link to="/about" className={`nav-link ${isActive('/about')}`}>
           <FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
           About
@@ -78,10 +82,6 @@ const Navbar = () => {
         <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
           <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           Contact Us
-        </Link>
-        <Link to="/privacy" className={`nav-link ${isActive('/privacy')}`}>
-          <FontAwesomeIcon icon={faShieldAlt} className="nav-icon" />
-          Privacy Policy
         </Link>
       </div>
     </nav>
@@ -115,7 +115,7 @@ const Footer = () => (
       <div className="footer-section">
         <h4>Connect With Us</h4>
         <div className="social-icons">
-          <a href="https://www.facebook.com/daregion2official" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
+          <a href="https://www.facebook.com" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
         </div>
       </div>
     </div>
