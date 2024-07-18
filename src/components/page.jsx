@@ -237,7 +237,7 @@ function Page() {
           preserveAspectRatio: 'xMidYMid slice'
         }
       },
-      powerBIUrl: "PowerBIReportHere"
+      powerBIUrl: "https://app.powerbi.com/view?r=eyJrIjoiYzA1MmVhNjQtYTJjOS00NmM3LTkxZjYtMDFkYWE5MDk4YjM0IiwidCI6IjY4OTgwNjFkLTFhNmItNGUzOS1hZGZjLWRjOGFmZTA3MjIwMSIsImMiOjEwfQ%3D%3D"
     },
     {
       title: 'RESEARCH',
@@ -251,7 +251,7 @@ function Page() {
           preserveAspectRatio: 'xMidYMid slice'
         }
       },
-      powerBIUrl: "PowerBIReportHere"
+      powerBIUrl: "https://app.powerbi.com/reportEmbed?reportId=0838f3e0-90bf-42a3-9c0b-28db213e8024&autoAuth=true&ctid=6898061d-1a6b-4e39-adfc-dc8afe072201"
     },
     {
       title: 'RAED',
@@ -265,7 +265,7 @@ function Page() {
           preserveAspectRatio: 'xMidYMid slice'
         }
       },
-      powerBIUrl: "PowerBIReportHere"
+      powerBIUrl: "https://app.powerbi.com/view?r=eyJrIjoiYjMzMmEzMmItNmI4ZS00MTNmLWJmNTAtYjY4MDk0OTc0ZmRlIiwidCI6IjY4OTgwNjFkLTFhNmItNGUzOS1hZGZjLWRjOGFmZTA3MjIwMSIsImMiOjEwfQ%3D%3D&fbclid=IwZXh0bgNhZW0CMTEAAR1XcA1-2hTF0oqkNRWSyJH9N_4IadnhzO3ERZWUCGH75dsLRc26w_xbr1Y_aem_RUg6R-adhnEapuQVaapduA"
     },
     {
       title: 'AMAD',
@@ -323,7 +323,7 @@ function Page() {
           preserveAspectRatio: 'xMidYMid slice'
         }
       },
-      powerBIUrl: "PowerBIReportHere"
+      powerBIUrl: "https://app.powerbi.com/reportEmbed?reportId=8df25fb1-8726-4fc8-ad32-a63e15282704&autoAuth=true&ctid=6898061d-1a6b-4e39-adfc-dc8afe072201"
     },
     {
       title: 'RCES',
