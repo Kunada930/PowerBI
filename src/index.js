@@ -7,6 +7,7 @@ import App from './App';
 import Page from './components/page';
 import About from './components/about'
 import Contact from './components/contactUs'
+import MainMenu from './components/mainMenu'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <Contact/>
   },
+  {
+    path: "/ninmenu",
+    element: <MainMenu/>
+  }
 ], {
   basename: "/PowerBI"  // This should match your repository name
 });
