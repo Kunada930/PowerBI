@@ -7,6 +7,21 @@ import { Link } from 'react-router-dom'
 import { FaChartLine, FaDollarSign, FaClipboardCheck, FaAddressBook, FaFlask, FaChartBar, FaCalculator, FaCreditCard, FaHome } from 'react-icons/fa';
 import { IoMdMenu } from 'react-icons/io';
 
+const sidebarStyles = { 
+  toggleBtn: {
+    position: 'fixed',
+    top: '10px',
+    left: '10px',
+    background: 'linear-gradient(135deg, #f0f4ff 0%, #f5f9ff 100%)',
+    border: 'none',
+    fontSize: '24px',
+    cursor: 'pointer',
+    zIndex: 1001,
+    padding: '5px',
+    borderRadius: '5px',
+  },
+};
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,7 +43,7 @@ const Sidebar = () => {
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <button className="toggle-btn" onClick={toggleSidebar}>
+      <button style={sidebarStyles.toggleBtn} onClick={toggleSidebar}>
         <IoMdMenu />
       </button>
       <nav>

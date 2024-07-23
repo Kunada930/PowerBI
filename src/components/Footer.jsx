@@ -21,9 +21,10 @@ const Footer = () => (
 			<div className="footer-section">
 				<h4>About Power BI</h4>
 				<p>
-					The Department of Agriculture Regional Field Office No. 02 is
-					committed to empowering farmers and fishers through innovative
-					agricultural practices and sustainable development.
+				Power BI is a Microsoft service for visualizing and 
+				sharing data insights through interactive dashboards 
+				and reports. It connects to various data sources and helps with 
+				data analysis and business intelligence.
 				</p>
 			</div>
 			<div className="footer-section">
