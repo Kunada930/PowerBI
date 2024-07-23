@@ -505,91 +505,267 @@
 
 /* Footer */
 .footer {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 40px 20px 20px;
-    font-family: Arial, sans-serif;
-    border-top: 2px solid #0072ff;
-    border-top: 2px solid transparent;
-border-image: linear-gradient(90deg, #0072ff, #00c6ff) 1;
-  }
-  
+  background-color: #494949;
+  color: #e7e7e7;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, #0072ff, #00c6ff) 1;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.footer-section h4 {
+  color: #eeeeee;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 30px;
+  height: 2px;
+  background-color: #dfdfdf;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #e4e4e4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #0072ff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: #e9e9e9;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: #00c6ff;
+}
+
+.footer-bottom {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #cfcfcf;
+}
+
+@media (max-width: 768px) {
   .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+      flex-direction: column;
   }
-  
-  .footer-section h4 {
-    color: #0072ff;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    position: relative;
+
+  .footer-section {
+      flex-basis: 100%;
+      margin-bottom: 30px;
   }
-  
-  .footer-section h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 30px;
-    height: 2px;
-    background-color: #0072ff;
-  }
-  
-  .footer-section p, .footer-section ul {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 8px;
-  }
-  
-  .footer-section a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section a:hover {
-    color: #0072ff;
-  }
-  
+
   .social-icons {
-    display: flex;
-    gap: 15px;
+      justify-content: center;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .footer {
+      padding: 30px 10px 10px;
+  }
+
+  .footer-section h4 {
+      font-size: 1.1rem;
+  }
+
+  .footer-section p, .footer-section ul {
+      font-size: 0.85rem;
+  }
+
   .social-icons a {
-    color: #0072ff;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+      font-size: 1.3rem;
   }
+}
+
+
+  .page-wrapper {
+    display: flex;
+  }
+
+  /* Sidebar styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  background: linear-gradient(135deg, #f0f4ff 0%, #f5f9ff 100%);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.sidebar nav ul li {
+  padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar nav ul li a svg {
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.sidebar nav ul li a:hover {
+  background: linear-gradient(90deg, rgba(0,114,255,0.1), rgba(0,198,255,0.1));
+  color: #0072ff;
+  transform: translateX(5px);
+}
+
+.sidebar nav ul li a:hover svg {
+  color: #00c6ff;
+  transform: scale(1.1);
+}
+
+/* Gradient text effect on hover */
+.sidebar nav ul li a:hover span {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Toggle button styles */
+.toggle-btn {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #3b3b3b;
+}
+
+/* Ensure the main content doesn't overlap with the toggle button */
+.main-content {
+  padding-top: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #303030;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transform: translateY(-2px);
+}
   
-  .social-icons a:hover {
-    transform: translateY(-3px);
-    color: #00c6ff;
-  }
-  
-  .footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer-bottom p {
-    font-size: 0.8rem;
-    color: #666;
-  }
   
   @media (max-width: 768px) {
     .footer-content {

@@ -3,9 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faHome,
-	faInfoCircle,
-	faEnvelope,
-	faPieChart,
 	faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import da_logo from "../assets/DA_Logo.png";
@@ -41,21 +38,6 @@ const Navbar = () => {
 				<Link to="/" className={`nav-link ${isActive("/")}`}>
 					<FontAwesomeIcon icon={faHome} className="nav-icon" />
 					Home
-				</Link>
-				<Link
-					to="/dadospowerbiportal"
-					className={`nav-link ${isActive("/dadospowerbiportal")}`}
-				>
-					<FontAwesomeIcon icon={faPieChart} className="nav-icon" />
-					Analytics
-				</Link>
-				<Link to="/about" className={`nav-link ${isActive("/about")}`}>
-					<FontAwesomeIcon icon={faInfoCircle} className="nav-icon" />
-					About
-				</Link>
-				<Link to="/contact" className={`nav-link ${isActive("/contactus")}`}>
-					<FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
-					Contact Us
 				</Link>
 			</div>
 		</nav>

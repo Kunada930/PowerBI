@@ -19,21 +19,12 @@ const Footer = () => (
 				</p>
 			</div>
 			<div className="footer-section">
-				<h4>Quick Links</h4>
-				<ul>
-					<li>
-						<a href="/PowerBI">Home</a>
-					</li>
-					<li>
-						<a href="/about">About</a>
-					</li>
-					<li>
-						<a href="https://www.google.com/error">Contact Us</a>
-					</li>
-					<li>
-						<a href="https://www.google.com/error">Privacy Policy</a>
-					</li>
-				</ul>
+				<h4>About Power BI</h4>
+				<p>
+					The Department of Agriculture Regional Field Office No. 02 is
+					committed to empowering farmers and fishers through innovative
+					agricultural practices and sustainable development.
+				</p>
 			</div>
 			<div className="footer-section">
 				<h4>Contact Us</h4>
